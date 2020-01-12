@@ -7,13 +7,17 @@ function Home() {
     console.log( phones )
     return (
         <React.Fragment>
-        <h1>Phones</h1>
-        <ul>
+        <div className='jumbotron jumbotron-fluid'>
+        <h1 className="display-4 text-center">Phones</h1>
+        </div>
+        <div>
+        <ul className='d-flex flex-row justify-content-around flex-wrap'>
         {phones.map(phone=>{
 return ( 
     <PhoneCard key={phone.id} props={phone}></PhoneCard>
 )})}
 </ul>
+</div>
       </React.Fragment>
     )
 }

@@ -5,3 +5,10 @@ export function setPhoneList(allPhones) {
        phones: allPhones
      }
   }
+
+  export function selectedPhone(id){
+   return {
+      type: "SELECTED_PHONE",
+      selectedPhone: id
+    }
+  }

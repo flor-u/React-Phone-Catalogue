@@ -7,8 +7,8 @@ function Home() {
     console.log( phones )
     return (
         <React.Fragment>
-        <div className='jumbotron jumbotron-fluid'>
-        <h1 className="display-4 text-center">Phones</h1>
+        <div className='section-hero'>
+        <h1 className="text-center">Phones</h1>
         </div>
         <div>
         <ul className='d-flex flex-row justify-content-around flex-wrap'>

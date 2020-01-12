@@ -1,30 +1,15 @@
 import React from 'react'
 import { store } from "../store";
+import { Link } from 'react-router-dom';
 
-function PhoneDetail(props) {
-    console.log(props)
-    const { phones } = store.getState();
-    const selectedPhone= phones[props.phoneID];
+
+function PhoneDetail() {
+    const { selectedPhone} = store.getState();
     console.log(selectedPhone)
 
     return (
         <React.Fragment>
-           {/* <div className="no-border">
-  <img src={selectedPhone.imageFileName} className="phone-detail" alt={selectedPhone.name}/>
-  <div className="card-body">
-    <h4 className="card-title">{selectedPhone.name}</h4>
-    <h5 className="card-title">{selectedPhone.price}€</h5>
-    <p className="card-text">{selectedPhone.description}</p>
-  </div>
-  <ul className="list-group list-group-flush">
-    <li className="list-group-item">Manufactured by {selectedPhone.manufacturer}</li>
-    <li className="list-group-item">{selectedPhone.screen} screen</li>
-    <li className="list-group-item">{selectedPhone.processor} processor</li>
-<li className="list-group-item">{selectedPhone.ram}GB ram</li>
-  </ul>
-</div> */}
-
-<div className="card mb-3">
+<div className="mb-3">
   <div className="row no-gutters">
     <div className="col-md-4">
     
@@ -32,11 +17,20 @@ function PhoneDetail(props) {
     </div>
     <div className="col-md-8">
       <div className="card-body">
-      <h4 className="card-title">{selectedPhone.name}</h4>
-        <h5 className="card-title">{selectedPhone.price}€</h5>
-        <p className="card-text">{selectedPhone.description}</p>        
-        <p className="card-text"><small class="text-muted">Manufactured by {selectedPhone.manufacturer}</small></p>
+      <h4 className="title">{selectedPhone.name}</h4>
+        <h5 className="price">{selectedPhone.price}€</h5>
+        <p className="card-text text-left">{selectedPhone.description}</p>        
+        <p className="card-text text-left"><small className="text-muted">Manufactured by {selectedPhone.manufacturer}</small></p>
+        <h3 className="text-left"><b>Technical specs</b></h3>
+        <ul>
+          <li className="text-muted small">Color: {selectedPhone.color}</li>
+          <li className="text-muted small">{selectedPhone.screen} screen</li>
+          <li className="text-muted small">{selectedPhone.processor} processor</li>
+          <li className="text-muted small">{selectedPhone.ram}GB ram</li>
+        </ul>
       </div>
+      <Link to='/' className="card-text text-left">Back </Link>
+
     </div>
   </div>
 </div>

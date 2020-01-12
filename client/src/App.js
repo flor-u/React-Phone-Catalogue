@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import { Switch, Route } from "react-router-dom";
+import axios from "axios";
 import "bootstrap/dist/css/bootstrap.css";
+import './App.css'
 import PhoneDetail from "./components/PhoneDetail";
 import Home from "./components/Home";
-import axios from "axios";
 import { store } from "./store";
 import { setPhoneList } from "./actions";
 
